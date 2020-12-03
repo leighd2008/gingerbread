@@ -1,0 +1,8 @@
+.image-slide {
+	height: 100%;
+	width: 100%;
+  transition: background-image 2s ease-in-out;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}

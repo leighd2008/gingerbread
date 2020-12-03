@@ -1,0 +1,10 @@
+#container, .carousel {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+	height:450px;
+	margin: 0;
+	width: 100%;
+}
+
+$theme-blue: #14B6D4;

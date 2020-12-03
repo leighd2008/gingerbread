@@ -1,0 +1,17 @@
+.upload {
+  display: flex;
+  flex-direction: column;
+
+  input {
+    width: 200px;
+  }
+
+  .uploadFirebase {
+    width: 89px;
+  }
+
+  .uploadFirebase:enabled {
+    background-color: #ed1e24
+  }
+  
+}
