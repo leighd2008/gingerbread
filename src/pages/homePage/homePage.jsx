@@ -18,15 +18,19 @@ const HomePage = (categoryData/* , progressPics */) => {
     categoryDataArray[0][1].progressPics.images.map((pic, i) => {
       progressPics.push({ 'imgUrl': pic })
       return (progressPics)
-    })
-  }
+    });
+  }else {
+      return progressPics
+    }
+  
   if (categoryDataArray[0][1].finalPics.images) {
     categoryDataArray[0][1].finalPics.images.map((pic, i) => {
       finalPics.push({ 'imgUrl': pic })
-      return(finalPics)
-    })
-  }
-  
+      return (finalPics)
+    });
+  } else {
+      return finalPics
+    }
   return (
     <div className="homepage" style={{ backgroundImage: `url(${Wallpaper})` }}>
       <h1>1st Annual DiBattiste Family Gingerbread House Event</h1>

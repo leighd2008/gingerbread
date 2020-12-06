@@ -42,7 +42,11 @@ class Carousel extends Component {
 
     return (
       <div className="carousel">
-        <ImageSlide url={imgUrls[this.state.currentImageIndex].imgUrl.imgUrl} names={imgUrls[this.state.currentImageIndex].imgUrl.names} />
+        {
+          imgUrls.length ? 
+            <ImageSlide url={imgUrls[this.state.currentImageIndex].imgUrl.imgUrl} names={imgUrls[this.state.currentImageIndex].imgUrl.names} /> :
+            null
+        }
       </div>
     );
   }
