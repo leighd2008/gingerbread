@@ -6,14 +6,6 @@ import { selectCategoryData } from "../../redux/pictures/pictures.selectors";
 
 import './carousel.scss'
 
-// const images = require.context("../../assets/Homeruns", true);
-
-
-const imgUrls = []
-
-
-
-
 class Carousel extends Component {
   constructor(props) {
     super(props);
@@ -25,10 +17,6 @@ class Carousel extends Component {
     this.setNextImage = this.setNextImage.bind(this);
   }
 
-  // componentDidUpdate() {
-  //   setInterval(() => { this.setNextImage(); }, 3000);
-  // }
-
   componentDidMount() {
     var intervalId = setInterval(this.setNextImage, 3000);
     this.setState({ intervalId: intervalId });
@@ -39,7 +27,7 @@ class Carousel extends Component {
   }
 
   setNextImage() {
-    const lastIndex = imgUrls.length - 1;
+    const lastIndex = this.props.imgUrls.length - 1;
     const { currentImageIndex } = this.state;
     const shouldResetIndex = currentImageIndex === lastIndex;
     const index = shouldResetIndex ? 0 : currentImageIndex + 1;
@@ -50,16 +38,11 @@ class Carousel extends Component {
   }
 
   render() {
-    const { categoryData } = this.props;
-    
-    const categoryDataArray = Object.entries(categoryData);
-    categoryDataArray[0][1].images.map((pic, i) => {
-      return (imgUrls.push(pic.imgUrl))
-    })
-    
+    const { imgUrls } = this.props;
+
     return (
       <div className="carousel">
-        <ImageSlide url={imgUrls[this.state.currentImageIndex]} />
+        <ImageSlide url={imgUrls[this.state.currentImageIndex].imgUrl.imgUrl} names={imgUrls[this.state.currentImageIndex].imgUrl.names} />
       </div>
     );
   }

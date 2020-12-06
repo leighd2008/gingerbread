@@ -10,19 +10,22 @@ import Carousel from '../../components/carousel/carousel'
 
 import "./homePage.scss";
 
-const HomePage = (categoryData, progressPics) => {
-  console.log(categoryData)
-  const imgUrls = []
+const HomePage = (categoryData/* , progressPics */) => {
+  const progressPics = [];
+  const finalPics = [];
   const categoryDataArray = Object.entries(categoryData);
-  console.log(categoryDataArray)
-  console.log(categoryDataArray[0][1].progressPics.images);
-  categoryDataArray[0][1].progressPics.images.map((pic, i) => {
-    return (imgUrls.push(pic.imgUrl))
-  })
-  console.log(imgUrls);
-  // // const categoryDataArray = Object.entries(categoryData);
-  // console.log(categoryData)
-  
+  if (categoryDataArray[0][1].progressPics.images) {
+    categoryDataArray[0][1].progressPics.images.map((pic, i) => {
+      progressPics.push({ 'imgUrl': pic })
+      return (progressPics)
+    })
+  }
+  if (categoryDataArray[0][1].finalPics.images) {
+    categoryDataArray[0][1].finalPics.images.map((pic, i) => {
+      finalPics.push({ 'imgUrl': pic })
+      return(finalPics)
+    })
+  }
   
   return (
     <div className="homepage" style={{ backgroundImage: `url(${Wallpaper})` }}>
@@ -31,12 +34,13 @@ const HomePage = (categoryData, progressPics) => {
       </div>
       <div className='inprogress'>
         <h1>Show us how much fun you are having!</h1>
-        <UploadFiles progressPics={progressPics} />
-        <Carousel imgUrls={imgUrls}/>
+        <UploadFiles category='progressPics' pictureIndex={progressPics.length}/>
+        <Carousel imgUrls={progressPics}/>
       </div>
       <div className='final'>
         <h1>Finished Product</h1>
-        {/* <UploadFiles /> */}
+        <UploadFiles category='finalPics' pictureIndex={finalPics.length}/>
+        <Carousel imgUrls={finalPics} />
       </div>
     </div>
   );
@@ -47,4 +51,3 @@ const mapStateToProps = createStructuredSelector({
 })
 
 export default connect(mapStateToProps)(HomePage);
-// export default HomePage;

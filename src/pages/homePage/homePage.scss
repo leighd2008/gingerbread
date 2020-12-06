@@ -7,7 +7,7 @@
   background-color: hsla(0, 0%, 100%, 0) !important;
   background-position: center;
   width: 100vw;
-  height: 300vw;
+  // height: 300vw;
   border: none;
 
   .nativity {
@@ -39,17 +39,17 @@
     margin: 10px;
   }
 
-  .inprogress {
+  .inprogress, .final {
     width: 325px;
-    height: 420px;
+    height: 550px;
     border: 5px solid #ed1e24;
     margin: 10px;
   }
 
-  .final {
-    width: 325px;
-    height: 420px;
-    border: 5px solid #ed1e24;
-    margin: 10px;
-  }
+  // .final {
+  //   width: 325px;
+  //   height: 420px;
+  //   border: 5px solid #ed1e24;
+  //   margin: 10px;
+  // }
 }

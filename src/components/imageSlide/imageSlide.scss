@@ -1,8 +1,21 @@
-.image-slide {
-	height: 100%;
-	width: 100%;
-  transition: background-image 2s ease-in-out;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+.slide {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+
+  .image-slide {
+    height: 100%;
+    width: 100%;
+    transition: background-image 2s ease-in-out;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  h2 {
+    font: 1em sans-serif;
+  }
 }
