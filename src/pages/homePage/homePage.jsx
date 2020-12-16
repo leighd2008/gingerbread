@@ -5,7 +5,8 @@ import Background from '../../assets/gareth-harper-dABKxsPTAEk-unsplash.jpg';
 import Wallpaper from '../../assets/4605135.jpg';
 import UploadFiles from '../../components/uploadFiles/uploadFiles';
 import { selectCategoryData } from "../../redux/pictures/pictures.selectors";
-import Carousel from '../../components/carousel/carousel'
+import Carousel from '../../components/carousel/carousel';
+// import Slideshow from '../../components/slideshow/slideshow';
 
 
 import "./homePage.scss";
@@ -39,7 +40,7 @@ const HomePage = (categoryData/* , progressPics */) => {
       <div className='inprogress'>
         <h1>Show us how much fun you are having!</h1>
         <UploadFiles category='progressPics' pictureIndex={progressPics.length}/>
-        <Carousel imgUrls={progressPics}/>
+        <Carousel imgUrls={progressPics} />
       </div>
       <div className='final'>
         <h1>Finished Product</h1>

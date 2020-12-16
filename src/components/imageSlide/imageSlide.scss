@@ -9,14 +9,13 @@
   .image-slide {
     height: 100%;
     width: 100%;
-    transition: background-image 2s ease-in-out;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
   }
 
   h2 {
-    font: 1.5em sans-serif;
+    font: 1em sans-serif;
     font-weight: bold;
   }
 }

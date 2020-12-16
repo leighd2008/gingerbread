@@ -1,8 +1,10 @@
 #container, .carousel {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
 	height:400px;
-	margin: 0;
-	width: 100%;
+	margin: 10px 0;
+  width: 100%;
+  
 }
